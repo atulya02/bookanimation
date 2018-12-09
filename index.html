@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+    	
+    	body
+    	{
+    		margin: 0;
+    		padding: 0;
+    		background-color: #3498db;
+    	}
+    	.card
+    	{
+    		width: 300px;
+    		height: 400px;
+    		position: absolute;
+    		background-color: #fff;
+    		top: 50%;
+    		left: 50%;
+    		
+    		transform-style: preserve-3d;
+    		transform: translate(-50%,-50%) perspective(2000px);
+    		box-shadow: inset 300px 0 50px            ,0 20px 100px;
+    		transition: 1s;
+
+    	}
+
+    	.card:hover
+    	{
+    		transform: translate(-50%,-50%) perspective(2000px) rotate(-10deg);
+    		box-shadow: inset 20px 0 50px            ,0 10px 100px;
+    	}
+
+    	.card:before
+    	{
+    		content: '';
+    		position: absolute;
+    		top: -5px;
+    		left: 0;
+    		width: 100%;
+    		height: 5px;
+    		background-color: #95a5a6;
+    		transform-origin: bottom;
+    		transform:skew(-45deg);
+
+    	}
+
+    	.card:after
+    	{
+    		content: '';
+    		position: absolute;
+    		top: 0px;
+    		right: -5px;
+    		width: 5px;
+    		height: 100%;
+    		background-color: #7f8c8d;
+    		transform-origin: left;
+    		transform: skewY(-45deg);
+    	}
+
+    	.card .imgBox
+    	{
+    		width: 100%;
+    		height: 100%;
+    		position: relative;
+    		transform-origin: left;
+    		transition:cubic-bezier(.18,1.55,.76,.37) 1s;
+    		z-index: 1;
+    	}
+    	.card:hover .imgBox
+    	{
+    		transform: rotateY(-135deg);
+    	}
+    	.card .details
+    	{
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		box-sizing: border-box;
+    		padding: 20px;
+    		z-index: -1;
+    	}
+    </style>
+    <title></title>
+  </head>
+  <body>
+  	<div class="card">
+  		<div class="imgBox">
+  			<img src="image.jpg" width="300px" height="400px;">
+  			
+  		</div>
+  		<div class="details">
+  				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+  				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+  				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  			</div>
+  	</div>
+
+  </body>
+</html>
